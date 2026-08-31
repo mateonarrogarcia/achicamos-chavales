@@ -1,0 +1,20 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "noticias"
+    label: "Noticias"
+    folder: "content/noticias"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Categoría", name: "category", widget: "select", options: ["LaLiga", "Fútbol", "Europa", "Fichajes", "Opinión", "Historias", "NBA", "MLB"] }
+      - { label: "Fecha", name: "date", widget: "datetime" }
+      - { label: "Imagen de portada", name: "image", widget: "image", required: false }
+      - { label: "Resumen corto", name: "description", widget: "text" }
+      - { label: "Texto de la noticia", name: "body", widget: "markdown" }
