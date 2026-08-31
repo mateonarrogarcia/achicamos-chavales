@@ -1,7 +1,3 @@
-/* ==========================================
-   ACHICAMOS, CHAVALES - Carga Dinámica CMS
-   ========================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
   fetchNews();
 });
@@ -11,38 +7,31 @@ async function fetchNews() {
   if (!container) return;
 
   try {
-    // Busca las noticias subidas desde el CMS
     const response = await fetch('https://api.github.com/repos/mateonavarrogarcia/achicamos-chavales/contents/content/noticias');
-    
-    if (!response.ok) {
-      container.innerHTML = '<p>No hay noticias publicadas todavía.</p>';
-      return;
-    }
+    if (!response.ok) return;
 
     const files = await response.json();
     container.innerHTML = '';
 
-    // Filtra solo archivos .md o .json de la carpeta
     for (const file of files) {
-      if (file.name.endsWith('.md') || file.name.endsWith('.json')) {
+      if (file.name.endsWith('.json')) {
         const resContent = await fetch(file.download_url);
-        const text = await resContent.text();
+        const data = await resContent.json();
         
-        // Renderiza cada tarjeta de noticia
         const articleCard = document.createElement('article');
         articleCard.className = 'news-card';
+        
         articleCard.innerHTML = `
-          <div class="content">
-            <h3>${file.name.replace(/-/g, ' ').replace('.md', '').toUpperCase()}</h3>
-            <p>Haz clic para leer la noticia completa.</p>
-            <a href="${file.html_url}" target="_blank">Leer más</a>
+          <div class="content" style="padding: 20px; background: #1a1a1a; border-radius: 8px; margin-bottom: 15px;">
+            <span style="color: #ff3333; font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">${data.category || 'Noticia'}</span>
+            <h3 style="color: #fff; margin: 10px 0;">${data.title}</h3>
+            <p style="color: #ccc; font-size: 0.9rem;">Publicado el: ${new Date(data.date).toLocaleDateString()}</p>
           </div>
         `;
         container.appendChild(articleCard);
       }
     }
   } catch (error) {
-    console.error('Error cargando noticias:', error);
-    container.innerHTML = '<p>Error al cargar las noticias.</p>';
+    console.error('Error:', error);
   }
 }
