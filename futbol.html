@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fútbol | Achicamos, chavales</title>
+  <meta name="description" content="Todo el fútbol: LaLiga, Europa, fichajes e historias.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">ACHICAMOS, <span>CHAVALES</span></a>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="futbol.html">Fútbol</a>
+        <a href="laliga.html">LaLiga</a>
+        <a href="europa.html">Europa</a>
+        <a href="fichajes.html">Fichajes</a>
+        <a href="opinion.html">Opinión</a>
+        <a href="historias.html">Historias</a>
+        <a href="nba.html">NBA</a>
+        <a href="mlb.html">MLB</a>
+      </nav>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Buscar..." aria-label="Buscar">
+        <button type="button" aria-label="Buscar">🔍</button>
+      </div>
+      <button class="menu-toggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="search-results"></div>
+    <div id="main-content">
+      <div class="page-header">
+        <h1>⚽ Fútbol</h1>
+        <p>Todo lo que se mueve en el balón: LaLiga, competiciones europeas, fichajes y las historias que merecen ser contadas.</p>
+      </div>
+      <div class="news-grid" id="news-grid" data-category="laliga"></div>
+      <div class="news-grid" id="news-grid-extra" style="margin-top: -30px;"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">ACHICAMOS, <span>CHAVALES</span></a>
+        <p>Periodismo deportivo con actitud. Rigor cuando toca informar, descaro cuando toca opinar.</p>
+        <div class="social-links">
+          <a href="#" title="Instagram">IG</a>
+          <a href="#" title="TikTok">TT</a>
+          <a href="#" title="X">X</a>
+          <a href="#" title="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <h4>Secciones</h4>
+        <div class="footer-links">
+          <a href="futbol.html">Fútbol</a>
+          <a href="laliga.html">LaLiga</a>
+          <a href="europa.html">Europa</a>
+          <a href="fichajes.html">Fichajes</a>
+          <a href="nba.html">NBA</a>
+          <a href="mlb.html">MLB</a>
+        </div>
+      </div>
+      <div>
+        <h4>Más</h4>
+        <div class="footer-links">
+          <a href="opinion.html">Opinión</a>
+          <a href="historias.html">Historias</a>
+          <a href="#">Contacto</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Achicamos, chavales.</div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Mostrar también noticias de europa y fichajes en la sección fútbol
+    document.addEventListener('DOMContentLoaded', () => {
+      const extra = document.querySelector('#news-grid-extra');
+      if (extra) {
+        const europa = ARTICLES.filter(a => a.category === 'europa' || a.category === 'fichajes');
+        extra.innerHTML = europa.map(createCardHTML).join('');
+      }
+    });
+  </script>
+</body>
+</html>

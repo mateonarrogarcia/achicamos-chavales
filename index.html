@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Achicamos, chavales | El deporte sin filtros</title>
+  <meta name="description" content="Periodismo deportivo con actitud. Fútbol, NBA, MLB, fichajes e historias que importan.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">ACHICAMOS, <span>CHAVALES</span></a>
+      
+      <nav class="nav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="futbol.html">Fútbol</a>
+        <a href="laliga.html">LaLiga</a>
+        <a href="europa.html">Europa</a>
+        <a href="fichajes.html">Fichajes</a>
+        <a href="opinion.html">Opinión</a>
+        <a href="historias.html">Historias</a>
+        <a href="nba.html">NBA</a>
+        <a href="mlb.html">MLB</a>
+      </nav>
+
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Buscar..." aria-label="Buscar">
+        <button type="button" aria-label="Buscar">🔍</button>
+      </div>
+
+      <button class="menu-toggle" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+    
+    <!-- Resultados de búsqueda (oculto por defecto) -->
+    <div id="search-results"></div>
+
+    <div id="main-content">
+      <!-- HERO -->
+      <section class="hero">
+        <article class="hero-main">
+          <div class="img-placeholder"></div>
+          <div class="hero-content">
+            <span class="badge">LaLiga</span>
+            <h1>Real Madrid tropieza en el Bernabéu: Ancelotti ya tiene las alarmas encendidas</h1>
+            <p>Una derrota inesperada deja al equipo blanco con dudas de cara al Clásico. Vinicius no estuvo y el equipo lo notó de forma preocupante.</p>
+            <div class="meta">
+              <time>31 Ago 2026</time>
+              <span>Redacción Achicamos</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="hero-side">
+          <article class="side-card">
+            <div class="thumb"></div>
+            <div class="content">
+              <h3>Haaland marca un triplete y el City sigue volando</h3>
+              <div class="meta">
+                <time>31 Ago</time>
+                <span>Europa</span>
+              </div>
+            </div>
+          </article>
+          <article class="side-card">
+            <div class="thumb"></div>
+            <div class="content">
+              <h3>El Barça cierra el fichaje bomba del verano</h3>
+              <div class="meta">
+                <time>30 Ago</time>
+                <span>Fichajes</span>
+              </div>
+            </div>
+          </article>
+          <article class="side-card">
+            <div class="thumb"></div>
+            <div class="content">
+              <h3>Lakers se imponen a Celtics en duelo de leyendas</h3>
+              <div class="meta">
+                <time>31 Ago</time>
+                <span>NBA</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ÚLTIMAS NOTICIAS -->
+      <section>
+        <div class="section-header">
+          <h2>Últimas noticias</h2>
+          <a href="futbol.html">Ver todas →</a>
+        </div>
+        <div class="news-grid" id="news-grid" data-limit="8"></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">ACHICAMOS, <span>CHAVALES</span></a>
+        <p>Somos un grupo de periodistas y forofos que escribe de fútbol europeo —con el español como obsesión declarada— y que se escapa a la NBA y a la MLB siempre que puede. Prometemos rigor cuando toca informar y descaro cuando toca opinar.</p>
+        <div class="social-links">
+          <a href="#" title="Instagram">IG</a>
+          <a href="#" title="TikTok">TT</a>
+          <a href="#" title="X / Twitter">X</a>
+          <a href="#" title="YouTube">YT</a>
+        </div>
+      </div>
+      <div>
+        <h4>Secciones</h4>
+        <div class="footer-links">
+          <a href="futbol.html">Fútbol</a>
+          <a href="laliga.html">LaLiga</a>
+          <a href="europa.html">Europa</a>
+          <a href="fichajes.html">Fichajes</a>
+          <a href="nba.html">NBA</a>
+          <a href="mlb.html">MLB</a>
+        </div>
+      </div>
+      <div>
+        <h4>Más</h4>
+        <div class="footer-links">
+          <a href="opinion.html">Opinión</a>
+          <a href="historias.html">Historias</a>
+          <a href="#">Contacto</a>
+          <a href="#">Sobre nosotros</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Achicamos, chavales. Hecho con ⚽ y mucho café.
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
